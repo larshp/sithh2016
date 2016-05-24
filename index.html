@@ -46,13 +46,13 @@
 					</table>
 				</section>
 				<section>
+					<h3>Disclaimer</h3>
 					<table><tr><td>
-					<u>Mandatory Disclaimer</u><br>
 					Nothing recommended.<br>
 					<br>
 					But try it out in a sandbox to see if it works.<br>
 					<br>
-					It is open source, so if you find an error, feel free to fix or open issue on github.
+					It is open source, so if you find an error, feel free to fix or open an issue on github.
 					</td></tr></table>
 				</section>
 				<section>
@@ -66,15 +66,16 @@ Git client for ABAP</td></tr>
 </table>
 				</section>
 				<section>
+					<h3>Design Goals</h3>
 <table><tr><td>
-<u>Design goals</u>
 <li>Easy installation
 <li>Easy upgrade
 <li>Small system footprint
 <li>Code readable in git repository
 </td></tr></table>
 				</section>
-				<section>Connectivity
+				<section>
+					<h3>Connectivity</h3>
 <pre><code class="language-abap">cl_http_client=>create_by_url(
   EXPORTING
     url    = 'https://github.com'
@@ -103,7 +104,7 @@ li_client->send( ).
 				</section>
 				<section>
 					<section>
-					Serialization<br>
+					<h3>Serialization</h3>
 					<img src="hello.png" class="plain">
 					</section>
 					<section>
@@ -192,8 +193,7 @@ allows comparing code in repository vs system
 				</section>
 				<section>
 				<section>
-					Supported object types<br>
-					<br>
+<h3>Supported object types</h3>
 <table>
 <tr><td>ACID</td><td>MSAG</td><td>SPLO</td><td>TYPE</td></tr>
 <tr><td>AUTH</td><td>NROB</td><td>SSFO</td><td>VCLS</td></tr>
@@ -216,15 +216,139 @@ and even more:<br>
 </td></tr></table>
 </section>
 				</section>
-				<section>Protocol</section>
-				<section>Slide 9</section>
-				<section>Slide 10</section>
-				<section>Slide 11</section>
-				<section>Slide 12</section>
-				<section>Slide 13</section>
-				<section>Slide 14</section>
-			</div>
-		</div>
+				<section>
+<h3>Protocol</h3>
+<a href="https://www.kernel.org/pub/software/scm/git/docs/technical/pack-format.txt">pack-format.txt</a><br>
+<a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">Git-Internals-Git-Objects</a><br>
+<a href="https://www.ietf.org/rfc/rfc1951.txt">rfc1951.txt</a><br>
+todo, visualization?
+</section>
+
+<section>
+<h3>Github Support</h3>
+<table>
+<tr><td colspan="2">
+<u>The SHA1 mismatch</u><br>
+Git protocol: "Server and client MUST use lowercase for obj-id, both MUST treat obj-id as case-insensitive."<br>
+</td></tr>
+<tr><td>
+<u>The HTTP header incident</u><br>
+<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.2">rfc2616-sec4.html#sec4.2</a><br>
+"Field names are case-insensitive"
+</td><td>
+<br>
+<i class="fa fa-thumbs-o-up fa-5x plain"></i>
+</td></tr></table>
+</section>
+
+<section>
+<h3>Features</h3>
+<li>.abapgit file
+<li>online/offline
+</section>
+
+<section>
+<h3>Use cases</h3>
+<li>share code via the "cloud"
+<li>share internally
+</section>
+
+<section>
+<h3>What if</h3>
+<li>The Ethan Setup
+<li>Extra visibility(abapGitServer)
+<li>abaplint
+</section>
+
+<section>Slide 13</section>
+
+<section>
+<table>
+<tr><td colspan="2"><b>abapOpenChecks</b><br>
+Extra checks for SCI/ATC</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started 2 years ago</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>428 commits</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>1 contributor</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~21000 lines</td></tr>
+</table>
+</section>
+
+<section>
+	<section>
+<h3>Checks</h3>
+<table><tr><td>
+<li class="small">CHECK_01 - IF in IF
+<li class="small">CHECK_02 - EXIT or CHECK outside of loop
+<li class="small">CHECK_03 - Wrong use of TRY-CATCH
+<li class="small">CHECK_04 - Line length
+<li class="small">CHECK_05 - 7 bit ASCII
+<li class="small">CHECK_06 - Check for use of pretty printer
+<li class="small">CHECK_07 - Functional writing style for CALL METHOD
+<li class="small">CHECK_08 - Obsolete statement
+<li class="small">CHECK_09 - Tab instead of spaces
+<li class="small">CHECK_10 - Use icon_ constants
+<li class="small">CHECK_11 - Max one statement per line
+<li class="small">CHECK_12 - Specify SORT order
+<li class="small">CHECK_13 - Sequential blank lines
+<li class="small">CHECK_14 - Commented code
+<li class="small">CHECK_15 - Kernel CALL
+<li class="small">CHECK_16 - Line contains only . or ).
+<li class="small">CHECK_17 - Definitions in top of routine
+<li class="small">CHECK_18 - Empty branch
+<li class="small">CHECK_19 - Use LINE OF
+<li class="small">CHECK_20 - Bad indentation
+</td></tr></table>
+</section>
+<section>
+	<table><tr><td>
+<li class="small">CHECK_21 - Unused FORM parameter
+<li class="small">CHECK_22 - Conditions contain identical code
+<li class="small">CHECK_23 - Chained Statements
+<li class="small">CHECK_24 - Identical code blocks
+<li class="small">CHECK_25 - Selection screen data not referenced statically
+<li class="small">CHECK_26 - No direct changes to standard tables
+<li class="small">CHECK_27 - Last statement is RETURN
+<li class="small">CHECK_28 - Space before . or ,
+<li class="small">CHECK_29 - Naming, Local test classes
+<li class="small">CHECK_30 - EXPORTING can be omitted
+<li class="small">CHECK_31 - Extended Program Check, Filterable
+<li class="small">CHECK_32 - Database access
+<li class="small">CHECK_33 - Append structure field names
+<li class="small">CHECK_34 - Large WHEN construct
+<li class="small">CHECK_35 - Message not in use
+<li class="small">CHECK_36 - Exception text not in use
+<li class="small">CHECK_37 - Define message texts in SE91
+<li class="small">CHECK_38 - Avoid use of SELECT-ENDSELECT
+<li class="small">CHECK_39 - Smartforms global definitions naming conventions
+<li class="small">CHECK_40 - Check SY-SUBRC
+</td></tr></table>
+</section>
+<section>
+	<table><tr><td>
+<li class="small">CHECK_41 - Empty line in statement
+<li class="small">CHECK_42 - Identical WHEN code
+<li class="small">CHECK_43 - Parameter name can be omitted
+<li class="small">CHECK_44 - EXPORTING can be changed to RETURNING
+<li class="small">CHECK_45 - Use expressions
+<li class="small">CHECK_46 - Shadowed variable
+<li class="small">CHECK_47 - RFC call error handling
+<li class="small">CHECK_48 - Table DEFAULT KEY
+<li class="small">CHECK_49 - Double space
+</td></tr></table>
+</section>
+</section>
+<section>
+<li>all checks configurable
+<li>something for almost everyone
+</section>
+<section>
+<h3>Hendrik?</h3>
+<li>Describe DVCS
+<li>Git workflow
+<li>Branching
+</section>
+</div>
+</div>
 
 		<script src="reveal.js-3.3.0/lib/js/head.min.js"></script>
 		<script src="reveal.js-3.3.0/js/reveal.js"></script>
@@ -233,7 +357,7 @@ and even more:<br>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
-
+				slideNumber: true,
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'reveal.js-3.3.0/plugin/notes/notes.js', async: true },
