@@ -4,10 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<link rel="stylesheet" href="octicons/octicons.css">
+		<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+
+		<title>sithh2016</title>
 
 		<link rel="stylesheet" href="reveal.js-3.3.0/css/reveal.css">
-		<link rel="stylesheet" href="reveal.js-3.3.0/css/theme/black.css">
+		<link rel="stylesheet" href="reveal.js-3.3.0/css/theme/sky.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="reveal.js-3.3.0/lib/css/zenburn.css">
@@ -24,8 +27,52 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<img src="logo.svg" class="plain"><br>
+					<b>& abapOpenChecks</b>
+				</section>
+				<section>
+					<table>
+						<tr>
+							<td><i class="fa fa-twitter fa-5x plain"></i></td>
+							<td valign="middle"><a href="https://twitter.com/LarsHvam">@LarsHvam</a></td>
+						</tr>
+						<tr>
+							<td><i class="fa fa-github fa-5x plain"></i></td>
+							<td><a href="https://github.com/larshp">larshp</a></td>
+						</tr>
+						<tr><td colspan="2"><center><b><a href="http://www.nnit.com"><font color="#8C0000" size="36">nnit</font></b></center></td></tr>
+					</table>
+				</section>
+				<section>
+					<table><tr><td>
+					<u>Mandatory Disclaimer</u><br>
+					Nothing recommended.<br>
+					<br>
+					But try it out in a sandbox to see if it works.<br>
+					<br>
+					It is open source, so if you find an error, feel free to fix or open issue on github.
+					</td></tr></table>
+				</section>
+				<section>
+<table>
+<tr><td colspan="2"><img src="logo.svg" class="plain" width="200px"></td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started 2 years ago</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>409 commits</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>7 contributors</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~23000 lines</td></tr>
+</table>
+				</section>
+				<section>
+<table><tr><td>
+<u>Design goals</u>
+<li>Easy installation
+<li>Easy upgrade
+<li>Small system footprint
+<li>Code readable in git repository
+</td></tr></table>
+				</section>
+				<section>Slide 6</section>
 			</div>
 		</div>
 
@@ -35,14 +82,14 @@
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				history: false,
+				history: true,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-//					{ src: 'reveal.js-3.3.0/plugin/markdown/marked.js' },
-//					{ src: 'reveal.js-3.3.0/plugin/markdown/markdown.js' },
+//				{ src: 'reveal.js-3.3.0/plugin/markdown/marked.js' },
+//				{ src: 'reveal.js-3.3.0/plugin/markdown/markdown.js' },
 					{ src: 'reveal.js-3.3.0/plugin/notes/notes.js', async: true },
-//					{ src: 'reveal.js-3.3.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+//				{ src: 'reveal.js-3.3.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 				]
 			});
 		</script>
