@@ -6,6 +6,7 @@
 
 		<link rel="stylesheet" href="octicons/octicons.css">
 		<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+		<link href="prism/prism.css" rel="stylesheet" />
 
 		<title>sithh2016</title>
 
@@ -56,7 +57,8 @@
 				</section>
 				<section>
 <table>
-<tr><td colspan="2"><img src="logo.svg" class="plain" width="200px"></td></tr>
+<tr><td colspan="2"><img src="logo.svg" class="plain" width="200px"><br>
+Git client for ABAP</td></tr>
 <tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started 2 years ago</td></tr>
 <tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>409 commits</td></tr>
 <tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>7 contributors</td></tr>
@@ -72,7 +74,155 @@
 <li>Code readable in git repository
 </td></tr></table>
 				</section>
-				<section>Slide 6</section>
+				<section>Connectivity
+<pre><code class="language-abap">cl_http_client=>create_by_url(
+  EXPORTING
+    url    = 'https://github.com'
+    ssl_id = 'ANONYM'
+  IMPORTING
+    client = li_client ).
+li_client->request->set_cdata( '' ).
+li_client->request->set_header_field(
+  name  = '~request_method'
+  value = 'GET' ).
+li_client->request->set_header_field(
+  name  = 'user-agent'
+  value = 'git/abapGitv1.9.7' ).
+li_client->request->set_header_field(
+  name  = '~request_uri'
+  value = '/larshp/abapOpenChecks.git/info/refs?service=git-upload-pack' ).
+li_client->send( ).
+</code></pre>
+<pre class="fragment fade-up">
+001e# service=git-upload-pack
+000000fb868c5c06d2b51f6b83668f80922260f42a7ff4ca HEAD multi_ack thin-pack ...
+003f868c5c06d2b51f6b83668f80922260f42a7ff4ca refs/heads/master
+0040c1398119983b0ae48ec4091d9519194768a71bae refs/pull/268/head
+0000
+</pre>
+				</section>
+				<section>
+					<section>
+					Serialization<br>
+					<img src="hello.png" class="plain">
+					</section>
+					<section>
+<u>zhello.prog.abap</u>
+<pre><code class="language-abap">REPORT zhello.
+
+WRITE 'hello'.
+</code></pre>
+<u>zhello.prog.xml</u>
+<pre><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;abapGit version=&quot;v1.0.0&quot; serializer=&quot;LCL_OBJECT_PROG&quot; serializer_version=&quot;v1.0.0&quot;&gt;
+ &lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;
+  &lt;asx:values&gt;
+   &lt;PROGDIR&gt;
+    &lt;NAME&gt;ZHELLO&lt;/NAME&gt;
+    &lt;STATE&gt;A&lt;/STATE&gt;
+    &lt;SQLX/&gt;
+    &lt;EDTX/&gt;
+    &lt;VARCL&gt;X&lt;/VARCL&gt;
+    &lt;DBAPL/&gt;
+    &lt;DBNA/&gt;
+    &lt;CLAS/&gt;
+    &lt;TYPE/&gt;
+    &lt;OCCURS/&gt;
+    &lt;SUBC&gt;1&lt;/SUBC&gt;
+    &lt;APPL/&gt;
+    &lt;SECU/&gt;
+    &lt;CNAM/&gt;
+    &lt;CDAT&gt;0000-00-00&lt;/CDAT&gt;
+    &lt;UNAM/&gt;
+    &lt;UDAT&gt;0000-00-00&lt;/UDAT&gt;
+    &lt;VERN/&gt;
+    &lt;LEVL/&gt;
+    &lt;RSTAT/&gt;
+    &lt;RMAND/&gt;
+    &lt;RLOAD&gt;E&lt;/RLOAD&gt;
+    &lt;FIXPT&gt;X&lt;/FIXPT&gt;
+    &lt;SSET/&gt;
+    &lt;SDATE&gt;0000-00-00&lt;/SDATE&gt;
+    &lt;STIME/&gt;
+    &lt;IDATE&gt;0000-00-00&lt;/IDATE&gt;
+    &lt;ITIME/&gt;
+    &lt;LDBNAME/&gt;
+    &lt;UCCHECK&gt;X&lt;/UCCHECK&gt;
+   &lt;/PROGDIR&gt;
+   &lt;DYNPROS/&gt;
+   &lt;CUA&gt;
+    &lt;ADM&gt;
+     &lt;ACTCODE/&gt;
+     &lt;MENCODE/&gt;
+     &lt;PFKCODE/&gt;
+     &lt;DEFAULTACT/&gt;
+     &lt;DEFAULTPFK/&gt;
+     &lt;MOD_LANGU/&gt;
+    &lt;/ADM&gt;
+    &lt;STA/&gt;
+    &lt;FUN/&gt;
+    &lt;MEN/&gt;
+    &lt;MTX/&gt;
+    &lt;ACT/&gt;
+    &lt;BUT/&gt;
+    &lt;PFK/&gt;
+    &lt;SET/&gt;
+    &lt;DOC/&gt;
+    &lt;TIT/&gt;
+    &lt;BIV/&gt;
+   &lt;/CUA&gt;
+   &lt;TPOOL&gt;
+    &lt;item&gt;
+     &lt;ID&gt;R&lt;/ID&gt;
+     &lt;KEY/&gt;
+     &lt;ENTRY&gt;test&lt;/ENTRY&gt;
+     &lt;LENGTH&gt;4&lt;/LENGTH&gt;
+     &lt;SPLIT/&gt;
+    &lt;/item&gt;
+   &lt;/TPOOL&gt;
+  &lt;/asx:values&gt;
+ &lt;/asx:abap&gt;
+&lt;/abapGit&gt;
+</code></pre>
+</section>
+<section>
+and deserialization,
+allows comparing code in repository vs system
+</section>
+				</section>
+				<section>
+				<section>
+					Supported object types<br>
+					<br>
+<table>
+<tr><td>ACID</td><td>MSAG</td><td>SPLO</td><td>TYPE</td></tr>
+<tr><td>AUTH</td><td>NROB</td><td>SSFO</td><td>VCLS</td></tr>
+<tr><td>CLAS</td><td>PARA</td><td>SSST</td><td>VIEW</td></tr>
+<tr><td>DOMA</td><td>PROG</td><td>SUSC</td><td>W3HT</td></tr>
+<tr><td>DTEL</td><td>SFBF</td><td>SUSO</td><td>W3MI</td></tr>
+<tr><td>ENQU</td><td>SFBS</td><td>TABL</td><td>WDYA</td></tr>
+<tr><td>IARP</td><td>SFSW</td><td>TOBJ</td><td>WDYN</td></tr>
+<tr><td>IASP</td><td>SHLP</td><td>TRAN</td><td>XSLT</td></tr>
+<tr><td>IATU</td><td>SICF</td><td>TTYP</td><td></td></tr>
+</table>
+</section>
+<section>
+<table>
+<tr><td>
+Updated list:<br>
+<a href="https://github.com/larshp/abapGit/wiki/Supported-object-types">https://github.com/larshp/abapGit/wiki/Supported-object-types</a><br>
+and even more:<br>
+<a href="https://github.com/larshp/abapGit-Plugins">https://github.com/larshp/abapGit-Plugins</a> by Oliver Jägle<br>
+</td></tr></table>
+</section>
+				</section>
+				<section>Protocol</section>
+				<section>Slide 9</section>
+				<section>Slide 10</section>
+				<section>Slide 11</section>
+				<section>Slide 12</section>
+				<section>Slide 13</section>
+				<section>Slide 14</section>
 			</div>
 		</div>
 
@@ -86,12 +236,10 @@
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-//				{ src: 'reveal.js-3.3.0/plugin/markdown/marked.js' },
-//				{ src: 'reveal.js-3.3.0/plugin/markdown/markdown.js' },
 					{ src: 'reveal.js-3.3.0/plugin/notes/notes.js', async: true },
-//				{ src: 'reveal.js-3.3.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 				]
 			});
 		</script>
+		<script src="prism/prism.js"></script>
 	</body>
 </html>
