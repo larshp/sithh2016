@@ -60,9 +60,9 @@
 <tr><td colspan="2"><img src="logo.svg" class="plain" width="200px"><br>
 Git client for ABAP</td></tr>
 <tr><td><i class="mega-octicon more-mega octicon-calendar"></i></td><td>started 2 years ago</td></tr>
-<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>409 commits</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-git-commit"></i></td><td>455 commits</td></tr>
 <tr><td><i class="mega-octicon more-mega octicon-organization"></i></td><td>7 contributors</td></tr>
-<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~23000 lines</td></tr>
+<tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~24000 lines</td></tr>
 </table>
 				</section>
 				<section>
@@ -218,10 +218,10 @@ and even more:<br>
 				</section>
 				<section>
 <h3>Protocol</h3>
-<a href="https://www.kernel.org/pub/software/scm/git/docs/technical/pack-format.txt">pack-format.txt</a><br>
-<a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">Git-Internals-Git-Objects</a><br>
-<a href="https://www.ietf.org/rfc/rfc1951.txt">rfc1951.txt</a><br>
-todo, visualization?
+<img src="blobs.svg" class="plain" width="60%"><br>
+<a href="https://www.kernel.org/pub/software/scm/git/docs/technical/pack-format.txt">pack-format.txt</a>,
+<a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">Git-Internals-Git-Objects</a>,
+<a href="https://www.ietf.org/rfc/rfc1951.txt">rfc1951.txt</a>
 </section>
 
 <section>
@@ -242,14 +242,42 @@ Git protocol: "Server and client MUST use lowercase for obj-id, both MUST treat 
 </section>
 
 <section>
-<h3>Features</h3>
-<li>.abapgit file
-<li>online/offline
-<li>starting folder
-<li>language "support"
-<li>folders vs packages
-<li>explore page
-<li>todo
+<h3>.abapgit.xml</h3>
+<pre><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;
+ &lt;asx:values&gt;
+  &lt;DATA&gt;
+   &lt;MASTER_LANGUAGE&gt;E&lt;/MASTER_LANGUAGE&gt;
+   &lt;STARTING_FOLDER&gt;/abap/&lt;/STARTING_FOLDER&gt;
+   &lt;IGNORE&gt;
+    &lt;item&gt;/.gitignore&lt;/item&gt;
+    &lt;item&gt;/.travis.yml&lt;/item&gt;
+    &lt;item&gt;/LICENSE&lt;/item&gt;
+    &lt;item&gt;/README.md&lt;/item&gt;
+   &lt;/IGNORE&gt;
+  &lt;/DATA&gt;
+ &lt;/asx:values&gt;
+&lt;/asx:abap&gt;
+</code></pre></section>
+
+<section>
+<h3>Online/Offline</h3>
+todo, something
+</section>
+
+<section>
+<h3>Folder support</h3>
+todo, packages vs folders
+</section>
+
+<section>
+	<section>
+<h3>Explore</h3>
+<img src="main.png" class="plain">
+</section>
+<section>
+<img src="explore.png" class="plain">
+</section>
 </section>
 
 <section>
@@ -280,7 +308,9 @@ Extra checks for SCI/ATC</td></tr>
 <tr><td><i class="mega-octicon more-mega octicon-code"></i></td><td>~21000 lines</td></tr>
 </table>
 </section>
-
+<section>
+	<h3>Disclaimer</h3>
+</section>
 <section>
 	<section>
 <h3>Checks</h3>
