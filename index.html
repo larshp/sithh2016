@@ -187,8 +187,10 @@ WRITE 'hello'.
 </code></pre>
 </section>
 <section>
-and deserialization,
-allows comparing code in repository vs system
+and deserialization<brr>
+<br>
+comparing code in repository vs system
+<img src="diff.png" class="plain">
 </section>
 				</section>
 				<section>
@@ -205,22 +207,27 @@ allows comparing code in repository vs system
 <tr><td>IASP</td><td>SHLP</td><td>TRAN</td><td>XSLT</td></tr>
 <tr><td>IATU</td><td>SICF</td><td>TTYP</td><td></td></tr>
 </table>
+<aside class="notes">
+as native, no plugins by default
+</aside>
 </section>
 <section>
 <table>
 <tr><td>
 Updated list:<br>
-<a href="https://github.com/larshp/abapGit/wiki/Supported-object-types">https://github.com/larshp/abapGit/wiki/Supported-object-types</a><br>
-and even more:<br>
-<a href="https://github.com/larshp/abapGit-Plugins">https://github.com/larshp/abapGit-Plugins</a> by Oliver Jägle<br>
+<a href="https://github.com/larshp/abapGit/wiki/Supported-object-types">Supported-object-types</a><br>
+<br>
+and<br>
+<a href="https://github.com/larshp/abapGit-Plugins">https://github.com/larshp/abapGit-Plugins</a><br>
+by Oliver Jägle(<a href="https://twitter.com/OJaegle">@OJaegle</a>)<br>
 </td></tr></table>
 </section>
 				</section>
 				<section>
 <h3>Protocol</h3>
 <img src="blobs.svg" class="plain" width="60%"><br>
-<a href="https://www.kernel.org/pub/software/scm/git/docs/technical/pack-format.txt">pack-format.txt</a>,
 <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">Git-Internals-Git-Objects</a>,
+<a href="https://www.kernel.org/pub/software/scm/git/docs/technical/pack-format.txt">pack-format.txt</a>,
 <a href="https://www.ietf.org/rfc/rfc1951.txt">rfc1951.txt</a>
 </section>
 
@@ -242,7 +249,7 @@ Git protocol: "Server and client MUST use lowercase for obj-id, both MUST treat 
 </section>
 
 <section>
-<h3>.abapgit.xml</h3>
+<h3>Features: .abapgit.xml</h3>
 <pre><code class="language-markup">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;
  &lt;asx:values&gt;
@@ -261,12 +268,12 @@ Git protocol: "Server and client MUST use lowercase for obj-id, both MUST treat 
 </code></pre></section>
 
 <section>
-<h3>Online/Offline</h3>
+<h3>Features: Online/Offline</h3>
 todo, something
 </section>
 
 <section>
-<h3>Folder support</h3>
+<h3>Features: Folder support</h3>
 todo, packages vs folders
 </section>
 
@@ -281,22 +288,39 @@ todo, packages vs folders
 </section>
 
 <section>
-<h3>Use cases</h3>
-<li>share code via the "cloud"
-<li>share internally
-<li>todo
+<h3>Background mode</h3>
+<img src="background.png" class="plain">
 </section>
 
 <section>
-<h3>What if</h3>
-<li>The Ethan Setup
-<li>Extra visibility(abapGitServer)
-<li>"package manager"
-<li>abaplint
-<li>abapmerge
+<h3>Use case: Share code</h3>
+<img src="share.svg" class="plain">
+
+<aside class="notes">
+This is the main scenario, however having a git client introduces new possibilities
+</aside>
 </section>
 
-<section>Slide 13</section>
+<section>
+<h3>What if: The Ethan Setup</h3>
+<img src="ethan.svg" class="plain"><br>
+<a href="http://searchsap.techtarget.com/tip/Implementing-modern-practices-in-an-ABAP-development-shop">Ethan's Article</a>
+</section>
+
+<section>
+<h3>What if: Extra visibility</h3>
+<img src="server.svg" class="plain" width=70%><br>
+<a href="https://github.com/larshp/abapGitServer">abapGitServer</a> (WIP)
+<aside class="notes">
+background mode
+</aside>
+</section>
+
+<section>
+<h3>Labs preview: abapmerge</h3>
+todo
+<a href="https://github.com/larshp/abapmerge">abapmerge</a>
+</section>
 
 <section>
 <table>
@@ -384,14 +408,11 @@ Extra checks for SCI/ATC</td></tr>
 </section>
 <section>
 <h3>How to contribute</h3>
-todo
-</section>
-<section>
-<h3>Hendrik?</h3>
-<li>Describe DVCS
-<li>Git workflow
-<li>Branching
-<li>push, pull, clone, commit, fork, PR
+<a href="https://github.com/larshp/abapGit">https://github.com/larshp/abapGit</a><br>
+<a href="https://github.com/larshp/abapOpenChecks">https://github.com/larshp/abapOpenChecks</a><br>
+<aside class="notes">
+OPEN open source, just ship it
+</aside>
 </section>
 </div>
 </div>
