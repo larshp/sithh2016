@@ -47,12 +47,13 @@
 				</section>
 				<section>
 					<h3>Disclaimer</h3>
+					<img src="const.gif" class="plain">
+					<marquee>Test in sandbox</marquee>
+					<br>
 					<table><tr><td>
-					Nothing recommended.<br>
-					<br>
-					But try it out in a sandbox to see if it works.<br>
-					<br>
-					It is open source, so if you find an error, feel free to fix or open an issue on github.
+					Open source<br>
+					<li> old versions<br>
+					<li> contribute<br>
 					</td></tr></table>
 				</section>
 				<section>
@@ -279,7 +280,7 @@ todo, packages vs folders
 
 <section>
 	<section>
-<h3>Explore</h3>
+<h3>Features: Explore</h3>
 <img src="main.png" class="plain">
 </section>
 <section>
@@ -317,9 +318,34 @@ background mode
 </section>
 
 <section>
+	<section>
 <h3>Labs preview: abapmerge</h3>
-todo
-<a href="https://github.com/larshp/abapmerge">abapmerge</a>
+<table>
+	<tr><td>
+		<br>
+24000 lines<br>
+110+ classes<br>
+single REPORT/file
+</td></tr>
+</table>
+</section>
+<section>
+
+<pre><code class="language-abap">REPORT zabapgit.
+
+INCLUDE zabapgit_protocol.
+INCLUDE zabapgit_gui.
+INCLUDE zabapgit_prog.
+</code></pre>
+
+<table><tr><td>
+<img src="travis.jpg" class="plain" height="50%">
+</td><td>
+<a href="https://github.com/sbcgua/abap_include_assembler">abap_include_assembler</a><br>
+<a href="https://github.com/larshp/abapmerge">abapmerge</a><br>
+<a href="https://github.com/larshp/abapGit/issues/210">#210</a><br>
+</td></tr></table>
+</section>
 </section>
 
 <section>
@@ -334,6 +360,7 @@ Extra checks for SCI/ATC</td></tr>
 </section>
 <section>
 	<h3>Disclaimer</h3>
+	<img src="choco.jpg" class="plain">
 </section>
 <section>
 	<section>
@@ -399,13 +426,72 @@ Extra checks for SCI/ATC</td></tr>
 </td></tr></table>
 </section>
 </section>
+
 <section>
-<li>dive into: 06 + 07 + 08 + 11 + 30 + 43
-<li>checks created from real world examples
-<li>all checks configurable
-<li>something for almost everyone
-<li>upDOWNci
+<h3>Background</h3>
+<table><tr><td>
+<li>Based on real life examples
+<li>All checks configurable<br>
+<img src="default_conf.png" class="plain"><br>
+<li><a href="https://github.com/larshp/upDOWNci">upDOWNci</a>
+</td></tr></table>
 </section>
+
+<section>
+<h3>CHECK_06 - Pretty printer</h3>
+<a href="http://help.sap.com/abapdocu_740/en/abenlower_upper_case_guidl.htm">abenlower_upper_case_guidl.htm</a>
+<br>
+<a href="http://help.sap.com/abapdocu_740/en/abenuse_pretty_printer_guidl.htm">abenuse_pretty_printer_guidl.htm</a>
+<br>
+<img src="06_conf.png" class="plain">
+<br>
+<a href="https://github.com/larshp/abapOpenChecks/wiki/ZCL_AOC_CHECK_06">Check documentation</a>
+</section>
+
+<section>
+<h3>CHECK_08 - Obsolete statement</h3>
+
+<pre><code class="language-abap">MOVE foo TO bar.
+
+COMPUTE foo = 2 + 5.
+</code></pre>
+
+<a href="https://github.com/larshp/abapOpenChecks/wiki/ZCL_AOC_CHECK_08">Check documentation</a>
+</section>
+
+<section>
+<h3>CHECK_07 - Functional style</h3>
+
+<pre><code class="language-abap">CALL METHOD lo_columns->set_count_column
+  EXPORTING
+    value = 'FOOBAR'.</code></pre>
+<pre><code class="language-abap">lo_columns->set_count_column( EXPORTING value = 'FOOBAR' ).</code></pre>
+
+<a href="https://github.com/larshp/abapOpenChecks/wiki/ZCL_AOC_CHECK_07">Check documentation</a>
+</section>
+
+<section>
+<h3>CHECK_30 - EXPORTING</h3>
+
+<pre><code class="language-abap">lo_columns->set_count_column( EXPORTING value = 'FOOBAR' ).</code></pre>
+<pre><code class="language-abap">lo_columns->set_count_column( value = 'FOOBAR' ).</code></pre>
+
+<a href="https://github.com/larshp/abapOpenChecks/wiki/ZCL_AOC_CHECK_30">Check documentation</a>
+</section>
+
+<section>
+<h3>CHECK_43 - Parameter name</h3>
+
+<pre><code class="language-abap">lo_columns->set_count_column( value = 'FOOBAR' ).</code></pre>
+<pre><code class="language-abap">lo_columns->set_count_column( 'FOOBAR' ).</code></pre>
+
+<a href="https://github.com/larshp/abapOpenChecks/wiki/ZCL_AOC_CHECK_43">Check documentation</a>
+</section>
+
+<section>
+	<h3>DEMO</h3>
+</section>
+
 <section>
 <h3>How to contribute</h3>
 <a href="https://github.com/larshp/abapGit">https://github.com/larshp/abapGit</a><br>
